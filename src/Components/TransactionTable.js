@@ -4,6 +4,7 @@ import React from "react";
 
 function TransactionTable({transactions}){
     return(
+        // Table structure with css for collapsing borders and setting width
         <table style={{ borderCollapse: 'collapse', width: '70%' }}>
             <thead>
                 <tr>

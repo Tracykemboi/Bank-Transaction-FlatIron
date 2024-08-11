@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
-
-  const handleChange = (e) => {
+// function to handle changes in the input field
     setSearchTerm(e.target.value);
     onSearch(e.target.value);
-  };
+  }; const handleChange = (e) => {
+ 
 
   return (
     <input

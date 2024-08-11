@@ -2,15 +2,19 @@
 import React, { useState } from "react";
 
 function TransactionForm({onAddTransaction}){
+    // Initial state for form data with empty values
     const [formData,setFormData]=useState({
         date:'',description:'',category:'',amount:''
     })
+    // Function to handle changes in the input fields
     const handleChange=(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value})
     }
+    // Function to handle form submission
     const handleSubmit=(event)=>{
         event.preventDefault()
         onAddTransaction({...formData,id:Date.now()})
+        // Reset the form fields to empty values after submission
         setFormData({date:'',description:'',category:'',amount:''})
     }
     return(

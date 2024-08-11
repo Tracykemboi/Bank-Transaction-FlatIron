@@ -11,12 +11,13 @@ function App(){
   useEffect(() => {
         fetchTransactions();
       }, []);
-    
+    // fetch data from our db.json file
   const fetchTransactions = async () => {
           const response = await axios.get('http://localhost:8001/transactions');
           setTransactions(response.data);
           setFilteredTransactions(response.data)
       };
+      // Adding newtransactions to the transactions
   const addTransaction = (newTransaction) => {
         setTransactions([...transactions, newTransaction]);
         setFilteredTransactions([...filteredTransactions, newTransaction]);
